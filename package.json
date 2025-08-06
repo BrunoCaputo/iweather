@@ -32,6 +32,8 @@
     "@types/axios": "^0.14.0",
     "@types/react": "~19.0.10",
     "babel-plugin-module-resolver": "^5.0.0",
+    "jest": "~29.7.0",
+    "jest-expo": "~53.0.9",
     "react-native-svg-transformer": "^1.0.0",
     "typescript": "~5.8.3"
   },
