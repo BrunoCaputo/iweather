@@ -7,6 +7,8 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
+    "build:android:preview": "eas build -p android --profile preview",
+    "build:android:release": "eas build -p android --profile production",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "test:coverage": "jest --coverage"
