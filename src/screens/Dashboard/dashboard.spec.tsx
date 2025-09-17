@@ -1,10 +1,8 @@
 import { mockWeatherAPIResponse } from "@__tests__/mocks/api/mockWeatherAPIResponse";
 import {
-  act,
   fireEvent,
   render,
   screen,
-  waitFor,
   waitForElementToBeRemoved,
 } from "@__tests__/utils/customRender";
 import { api } from "@services/api";
@@ -29,14 +27,12 @@ describe("Screen: Dashboard", () => {
 
     render(<Dashboard />);
 
-    const cityName = screen.findByText(/rio do sul/i);
+    const cityName = await screen.findByText(/rio do sul/i);
 
-    await waitFor(() => {
-      expect(cityName).toBeTruthy();
-    });
+    expect(cityName).toBeTruthy();
   });
 
-  it("should show another selected weather city", async () => {
+  it("should show another city weather", async () => {
     jest
       .spyOn(api, "get")
       .mockResolvedValueOnce({ data: mockWeatherAPIResponse })
@@ -55,8 +51,7 @@ describe("Screen: Dashboard", () => {
     const cityOption = await screen.findByText(cityName, { exact: false });
     fireEvent.press(cityOption);
 
-    await waitFor(() => {
-      expect(screen.getByText(cityName, { exact: false })).toBeTruthy();
-    });
+    const selectedCity = await screen.findByText(cityName, { exact: false });
+    expect(selectedCity).toBeTruthy();
   });
 });
