@@ -8,7 +8,8 @@
       "autoIncrement": true,
       "android": {
         "distribution": "internal",
-        "autoIncrement": "versionCode"
+        "autoIncrement": "versionCode",
+        "image": "latest"
       },
       "ios": {
         "simulator": true
@@ -17,7 +18,11 @@
     "production": {
       "autoIncrement": true,
       "android": {
-        "autoIncrement": "versionCode"
+        "autoIncrement": "versionCode",
+        "image": "latest"
+      },
+      "ios": {
+        "image": "latest"
       }
     }
   },
@@ -27,6 +32,10 @@
         "track": "internal",
         "servicesAccountKeyPath": "google-services.json",
         "releaseStatus": "draft"
+      },
+      "ios": {
+        "appleId": "",
+        "ascAppId": ""
       }
     }
   }
