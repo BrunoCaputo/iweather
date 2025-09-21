@@ -48,7 +48,7 @@ jobs:
           token: ${{ secrets.EAS_EXPO_TOKEN }}
 
       - name: Install Dependencies
-        uses: npm install
+        run: npm install
 
       - name: Get config file
         env:
